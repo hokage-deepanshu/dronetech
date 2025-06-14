@@ -262,6 +262,7 @@
     color: #ff0000 !important;
     -webkit-text-fill-color: #ff0000 !important;
     text-fill-color: #ff0000 !important;
+    
     animation: textGlow 3s ease-in-out infinite alternate;
     display: block !important;
     visibility: visible !important;
