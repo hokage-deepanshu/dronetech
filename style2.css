@@ -239,43 +239,184 @@
             z-index: 2;
         }
 
-       .kyu {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-     }
+/* .kyu class responsive CSS - Proper visibility maintained */
+.kyu {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 40px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 10;
+}
 
-    .kyu h2 {
+.kyu h2 {
     font-family: 'Orbitron', monospace;
     font-size: 40px;
     font-weight: 900;
     line-height: 1.1;
     margin: 0;
     text-transform: uppercase;
-    color: #ff0000;
+    color: #ff0000 !important;
     -webkit-text-fill-color: #ff0000 !important;
+    text-fill-color: #ff0000 !important;
     animation: textGlow 3s ease-in-out infinite alternate;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap;
+}
+
+.kyu h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #ffffff !important;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-cyan);
+    animation: textGlow 3s ease-in-out infinite alternate;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap;
+}
+
+/* Tablets (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .kyu h2 {
+        font-size: 36px;
     }
-
     .kyu h3 {
-     font-family: 'Orbitron', monospace;
-            font-size: 18px;
-            font-weight: 900;
-            line-height: 1.1;
-            
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff 0%, var(--primary-cyan) 50%, var(--primary-red) 100%);
-            -webkit-background-clip: text;
-            text-decoration: underline;
-            background-clip: text;
-            -webkit-text-fill-color:linear-gradient(135deg, #ffffff 0%, var(--primary-cyan) 50%, var(--primary-red) 100%);
-            animation: textGlow 3s ease-in-out infinite alternate;
-   }
+        font-size: 16px;
+    }
+}
 
-   @keyframes textGlow {
+/* Large tablets and small laptops (768px) */
+@media (max-width: 768px) {
+    .kyu {
+        gap: 8px;
+    }
+    .kyu h2 {
+        font-size: 32px;
+    }
+    .kyu h3 {
+        font-size: 15px;
+    }
+}
+
+/* iPhone 14 Pro Max and similar (430px) */
+@media (max-width: 430px) {
+    .kyu {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 8px;
+        min-height: 35px;
+    }
+    .kyu h2 {
+        font-size: 28px;
+    }
+    .kyu h3 {
+        font-size: 14px;
+    }
+}
+
+/* iPhone 14 Pro and similar (393px) */
+@media (max-width: 393px) {
+    .kyu h2 {
+        font-size: 26px;
+    }
+    .kyu h3 {
+        font-size: 13px;
+    }
+}
+
+/* Standard phones (375px) */
+@media (max-width: 375px) {
+    .kyu {
+        gap: 6px;
+    }
+    .kyu h2 {
+        font-size: 24px;
+    }
+    .kyu h3 {
+        font-size: 12px;
+    }
+}
+
+/* Small phones (360px) */
+@media (max-width: 360px) {
+    .kyu h2 {
+        font-size: 22px;
+    }
+    .kyu h3 {
+        font-size: 11px;
+    }
+}
+
+/* Very small phones (320px) */
+@media (max-width: 320px) {
+    .kyu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        min-height: 45px;
+    }
+    .kyu h2 {
+        font-size: 20px;
+    }
+    .kyu h3 {
+        font-size: 10px;
+    }
+}
+
+/* Landscape mode for phones */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 900px) {
+    .kyu {
+        flex-direction: row;
+        gap: 6px;
+        min-height: 30px;
+    }
+    .kyu h2 {
+        font-size: 20px;
+    }
+    .kyu h3 {
+        font-size: 12px;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .kyu h2,
+    .kyu h3 {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Ensure visibility on all devices */
+@media (max-width: 768px) {
+    .kyu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .kyu h2,
+    .kyu h3 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+@keyframes textGlow {
     from { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5)); }
     to { filter: drop-shadow(0 0 40px rgba(255, 0, 128, 0.5)); }
-   }
+}
 
 
         .hero-text h1 {
